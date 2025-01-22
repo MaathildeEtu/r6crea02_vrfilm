@@ -12,46 +12,66 @@
             <a-asset>
                 <img id="sky" src="./assets/sky.png">
                 <img id="sol" src="./assets/sol.png">
+                <a-asset-item id="house" src="./assets/house.glb"></a-asset-item>
+
+                <!-- Nature -->
                 <a-asset-item id="plants" src="./assets/plants.glb"></a-asset-item>
                 <a-asset-item id="tree1" src="./assets/tree1.glb"></a-asset-item>
                 <a-asset-item id="tree2" src="./assets/tree2.glb"></a-asset-item>
                 <a-asset-item id="tree3" src="./assets/tree3.glb"></a-asset-item>
                 <a-asset-item id="tree4" src="./assets/tree4.glb"></a-asset-item>
+                <a-asset-item id="woodlog" src="./assets/woodlog.glb"></a-asset-item>
                 <a-asset-item id="herbs" src="./assets/herbs.glb"></a-asset-item>
-                <a-asset-item id="house" src="./assets/house.glb"></a-asset-item>
                 <a-asset-item id="flower-blue" src="./assets/flower_blue.glb"></a-asset-item>
                 <a-asset-item id="flower-yellow" src="./assets/flower_yellow.glb"></a-asset-item>
                 <a-asset-item id="flower-pink" src="./assets/flower_pink.glb"></a-asset-item>
-                <a-asset-item id="butterfly" src="./assets/butterfly.glb"></a-asset-item>
 
-                <a-asset-item id="navmesh" src="./assets/chemin-navmesh.glb"></a-asset-item>
+                <!-- Insectes -->
+                <a-asset-item id="butterfly" src="./assets/butterfly.glb"></a-asset-item>
+                <a-asset-item id="dragonfly" src="./assets/dragonfly.glb"></a-asset-item>
+                <a-asset-item id="ant" src="./assets/ant.glb"></a-asset-item>
+                <a-asset-item id="ladybug" src="./assets/ladybug.glb"></a-asset-item>
+
+                <a-asset-item id="navmesh" src="./assets/trace-navmesh.glb"></a-asset-item>
             </a-asset>
 
             <!-- Insectes -->
             <a-entity>
                 <a-entity gltf-model="#butterfly" position="8 12 0" rotation="0 225 0" scale="0.2 0.2 0.2"></a-entity>
                 <a-entity gltf-model="#butterfly" position="36 7 15" rotation="0 10 0" scale="0.2 0.2 0.2"></a-entity>
-                <a-entity gltf-model="#butterfly" position="9 9 -6" rotation="0 10 0" scale="0.1 0.1 0.1"></a-entity>
+                <a-entity gltf-model="#butterfly" position="9 11 -6" rotation="0 10 0" scale="0.1 0.1 0.1"></a-entity>
                 <a-entity gltf-model="#butterfly" position="-3 9 -13" rotation="0 5 0" scale="0.2 0.2 0.2"></a-entity>
+
+                <a-entity gltf-model="#dragonfly" position="-21 9 -3" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
+
+                <a-entity gltf-model="#ant" position="-11.08746 0.8 -0.20734" rotation="0 5 0" scale="0.6 0.6 0.6"></a-entity>
+                <a-entity gltf-model="#ant" position="-8.614 0.8 -0.87249" rotation="0 5 0" scale="0.6 0.6 0.6"></a-entity>
+                <a-entity gltf-model="#ant" position="-8.614 0.8 -0.87249" rotation="0 5 0" scale="0.6 0.6 0.6"></a-entity>
+                <a-entity gltf-model="#ant" position="-5.92331 0.8 0.60923" rotation="0 80 0" scale="0.6 0.6 0.6"></a-entity>
+                
+                <a-entity gltf-model="#ladybug" position="8 0.2 -5" rotation="0 40 0" scale="1.5 1.5 1.5"></a-entity>
+                <a-entity gltf-model="#ladybug" position="6 0.2 -3" rotation="0 40 0" scale="0.5 0.5 0.5"></a-entity>
+                <a-entity gltf-model="#ladybug" position="8 0.2 -1" rotation="0 40 0" scale="0.5 0.5 0.5"></a-entity>
+                <a-entity gltf-model="#ladybug" position="6 0.2 -1" rotation="0 20 0" scale="0.5 0.5 0.5"></a-entity>
 
             </a-entity>
 
             <!-- Arbres -->
             <a-entity>
-                <a-entity gltf-model="#tree2" position="26 0.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#tree2" position="-30 0.5 1.5" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="./assets/tree2.glb" position="-28.10911 0.5 42.23937" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <a-entity gltf-model="#tree2" position="48 -1 0" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <a-entity gltf-model="#tree2" position="-30 -1 1.5" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <a-entity gltf-model="./assets/tree2.glb" position="-28.10911 -1 42.23937" rotation="0 225 0" scale="10 10 10"></a-entity>
 
-                <a-entity gltf-model="#tree3" position="24 0.5 -40" rotation="0 225 0" scale="20 20 20"></a-entity>
-                <a-entity gltf-model="#tree3" position="6.5 0.5 -33" rotation="0 225 0" scale="20 20 20"></a-entity>
-                <a-entity gltf-model="#tree3" position="-11 0.5 -10" rotation="0 225 0" scale="20 20 20"></a-entity>
-                <a-entity gltf-model="#tree3" position="-13 0.5 18" rotation="0 225 0" scale="20 20 20"></a-entity>
-                <a-entity gltf-model="#tree3" position="24 0.5 20" rotation="0 225 0" scale="20 20 20"></a-entity>
-                <a-entity gltf-model="#tree3" position="6.13 0.5 33" rotation="0 225 0" scale="20 20 20"></a-entity>
-                <a-entity gltf-model="#tree3" position="38 0.5 -18" rotation="0 225 0" scale="20 20 20"></a-entity>
+                <a-entity gltf-model="#tree3" position="24 -1 -40" rotation="0 225 0" scale="20 20 20"></a-entity>
+                <a-entity gltf-model="#tree3" position="6.5 -1 -33" rotation="0 225 0" scale="20 20 20"></a-entity>
+                <a-entity gltf-model="#tree3" position="-11 -1 -10" rotation="0 225 0" scale="20 20 20"></a-entity>
+                <a-entity gltf-model="#tree3" position="-22 -1 18" rotation="0 225 0" scale="20 20 20"></a-entity>
+                <a-entity gltf-model="#tree3" position="35 -1 20" rotation="0 225 0" scale="20 20 20"></a-entity>
+                <a-entity gltf-model="#tree3" position="6.13 42" rotation="0 225 0" scale="20 20 20"></a-entity>
+                <a-entity gltf-model="#tree3" position="38 -1 -13" rotation="0 225 0" scale="20 20 20"></a-entity>
 
-                <a-entity gltf-model="#tree4" position="-20 0.5 -46" rotation="0 225 0" scale="15 15 15"></a-entity>
-                <a-entity gltf-model="#tree4" position="9 0.5 11" rotation="0 225 0" scale="15 15 15"></a-entity>
+                <a-entity gltf-model="#tree4" position="-20 -1 -46" rotation="0 225 0" scale="15 15 15"></a-entity>
+                <a-entity gltf-model="#tree4" position="9 -1 11" rotation="0 225 0" scale="15 15 15"></a-entity>
             </a-entity>
 
             <!-- House -->
@@ -61,19 +81,19 @@
 
             <!-- Flower -->
             <a-entity>
-                <a-entity gltf-model="#flower-blue" position="-2 0.30 -50" rotation="0 -20 0" scale="5 5 5"></a-entity>
-                <a-entity gltf-model="#flower-blue" position="-16 0.30 -53" rotation="0 -20 0" scale="5 5 5"></a-entity>
+                <!-- <a-entity gltf-model="#flower-blue" position="-2 0.30 -50" rotation="0 -20 0" scale="5 5 5"></a-entity> -->
+                <!-- <a-entity gltf-model="#flower-blue" position="-16 0.30 -53" rotation="0 -20 0" scale="5 5 5"></a-entity> -->
 
-                <a-entity gltf-model="#flower-pink" position="-16 8 -40.11317" rotation="0 -20 0" scale="60 60 60"></a-entity>
-                <a-entity gltf-model="#flower-pink" position="12.53919 8 18.78144" rotation="0 -20 0" scale="60 60 60"></a-entity>
-                <a-entity gltf-model="#flower-pink" position="-38.81187 8 -9.42458" rotation="0 -20 0" scale="60 60 60"></a-entity>
+                <a-entity gltf-model="#flower-pink" position="-16 8 -40" rotation="0 -20 0" scale="60 60 60"></a-entity>
+                <a-entity gltf-model="#flower-pink" position="4 8 18" rotation="0 -20 0" scale="60 60 60"></a-entity>
+                <a-entity gltf-model="#flower-pink" position="-38 8 -9" rotation="0 -20 0" scale="60 60 60"></a-entity>
 
-                <a-entity gltf-model="#flower-yellow" position="-16 0.3 -25.97083" rotation="0 -20 0" scale=".6 .6 .6"></a-entity>
-                <a-entity gltf-model="#flower-yellow" position="28.40562 0.3 -16.37444" rotation="0 90 0" scale=".6 .6 .6"></a-entity>
-                <a-entity gltf-model="#flower-yellow" position="28.40562 0.3 -22.95631" rotation="0 180 0" scale=".6 .6 .6"></a-entity>
-                <a-entity gltf-model="#flower-yellow" position="37.83257 0.3 32.45257" rotation="0 180 0" scale=".6 .6 .6"></a-entity>
-                <a-entity gltf-model="#flower-yellow" position="-23.52802 0.3 14.39799" rotation="0 180 0" scale=".6 .6 .6"></a-entity>
-                <a-entity gltf-model="#flower-yellow" position="-23.52802 0.3 13.3573" rotation="" scale=".6 .6 .6"></a-entity>
+                <a-entity gltf-model="#flower-yellow" position="-16 0.3 -25" rotation="0 -20 0" scale=".6 .6 .6"></a-entity>
+                <a-entity gltf-model="#flower-yellow" position="28 0.3 -16" rotation="0 90 0" scale=".6 .6 .6"></a-entity>
+                <a-entity gltf-model="#flower-yellow" position="28 0.3 -22" rotation="0 180 0" scale=".6 .6 .6"></a-entity>
+                <a-entity gltf-model="#flower-yellow" position="37 0.3 32" rotation="0 180 0" scale=".6 .6 .6"></a-entity>
+                <a-entity gltf-model="#flower-yellow" position="-23 0.3 14" rotation="0 180 0" scale=".6 .6 .6"></a-entity>
+                <a-entity gltf-model="#flower-yellow" position="-23 0.3 13" rotation="" scale=".6 .6 .6"></a-entity>
             </a-entity>
 
             <!-- Herbes -->
@@ -82,68 +102,68 @@
                 <!-- <a-entity gltf-model="#herbs" position="2 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity> -->
 
                 <!-- <a-entity gltf-model="#herbs" position="-10 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity> -->
-                <a-entity gltf-model="#herbs" position="-12 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="-12 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <!-- <a-entity gltf-model="#herbs" position="10 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <!-- <a-entity gltf-model="#herbs" position="12 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 
-                <a-entity gltf-model="#herbs" position="-10 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="-10 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="-12 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="10 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="10 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="12 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-10 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="-12 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="10 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="-12 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
+                <!-- <a-entity gltf-model="#herbs" position="10 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="12 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
 
                 <a-entity gltf-model="#herbs" position="-10 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-12 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="10 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="10 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="12 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-10 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-12 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="10 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="10 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="12 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
 
                 
                 <a-entity gltf-model="#herbs" position="-20 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-22 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="20 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="22 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="22 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity> -->
 
                 <a-entity gltf-model="#herbs" position="-20 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="-22 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="20 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="-22 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
+                <!-- <a-entity gltf-model="#herbs" position="20 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="22 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-20 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-22 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="20 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="22 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="22 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
 
                 <a-entity gltf-model="#herbs" position="-20 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-22 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="20 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="22 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-20 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="-22 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="-22 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="20 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="22 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
 
 
                 <a-entity gltf-model="#herbs" position="-30 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-32 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="30 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="32 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="30 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity> -->
+                <!-- <a-entity gltf-model="#herbs" position="32 2.5 0" rotation="0 225 0" scale="10 10 10"></a-entity> -->
 
                 <a-entity gltf-model="#herbs" position="-30 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="-32 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="30 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="32 2.5 20" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="-30 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="-30 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="-32 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
-                <a-entity gltf-model="#herbs" position="30 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="30 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="32 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
 
-                <a-entity gltf-model="#herbs" position="-30 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="-30 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="-32 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="30 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="32 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
@@ -167,7 +187,7 @@
                 <a-entity gltf-model="#herbs" position="40 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="42 2.5 -20" rotation="0 225 0" scale="10 10 10"></a-entity>
                 
-                <a-entity gltf-model="#herbs" position="-40 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
+                <!-- <a-entity gltf-model="#herbs" position="-40 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity> -->
                 <a-entity gltf-model="#herbs" position="-42 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="40 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
                 <a-entity gltf-model="#herbs" position="42 2.5 40" rotation="0 225 0" scale="10 10 10"></a-entity>
@@ -180,9 +200,8 @@
             <!-- Nav mesh. -->
             <a-entity 
                 nav-mesh
-                normal-material
                 visible="true"
-                position="0 0 20"
+                position="2 0.2 1.6"
                 gltf-model="#navmesh">
             </a-entity>
 
@@ -192,13 +211,13 @@
                     movement-controls="constrainToNavMesh: true"
                     position="0 0 0">
                 <a-entity camera
-                        position="0 1.6 0"
+                        position="0 1 0"
                         look-controls="pointerLockEnabled: true">
                     <a-cursor></a-cursor>
                 </a-entity>
             </a-entity>
             
-            <a-plane src="#sol" position="0 0 0" rotation="-90 0 0" width="800" height="800" color="#7BC8A4"></a-plane>
+            <a-plane src="#sol" position="0 0 0" rotation="-90 0 0" width="800" height="800" color="#28704f"></a-plane>
             <a-sky src="#sky"></a-sky>
             
         </a-scene>
