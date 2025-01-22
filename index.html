@@ -3,6 +3,9 @@
         <title>Projet Final</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+        <!-- <script src="./dist/aframe-extras.js"></script> -->
+
     </head>
     <body>
         <a-scene>
@@ -20,6 +23,8 @@
                 <a-asset-item id="flower-yellow" src="./assets/flower_yellow.glb"></a-asset-item>
                 <a-asset-item id="flower-pink" src="./assets/flower_pink.glb"></a-asset-item>
                 <a-asset-item id="butterfly" src="./assets/butterfly.glb"></a-asset-item>
+
+                <a-asset-item id="navmesh" src="./assets/chemin-navmesh.glb"></a-asset-item>
             </a-asset>
 
             <!-- Insectes -->
@@ -172,7 +177,26 @@
                 <a-entity gltf-model="#herbs" position="42 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
             </a-entity>
 
-            <a-camera position="0 3 18"></a-camera>
+            <!-- Nav mesh. -->
+            <a-entity 
+                nav-mesh
+                normal-material
+                visible="true"
+                position="0 0 20"
+                gltf-model="#navmesh">
+            </a-entity>
+
+
+            <!-- Player. -->
+            <a-entity id="rig"
+                    movement-controls="constrainToNavMesh: true"
+                    position="0 0 0">
+                <a-entity camera
+                        position="0 1.6 0"
+                        look-controls="pointerLockEnabled: true">
+                    <a-cursor></a-cursor>
+                </a-entity>
+            </a-entity>
             
             <a-plane src="#sol" position="0 0 0" rotation="-90 0 0" width="800" height="800" color="#7BC8A4"></a-plane>
             <a-sky src="#sky"></a-sky>
