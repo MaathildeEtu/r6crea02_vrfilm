@@ -13,6 +13,7 @@
                 <img id="sky" src="./assets/sky4.png">
                 <img id="sol" src="./assets/sol.png">
                 <a-asset-item id="house" src="./assets/house.glb"></a-asset-item>
+                <a-asset-item id="telescope" src="./assets/telescope.glb"></a-asset-item>
 
                 <!-- Nature -->
                 <a-asset-item id="plants" src="./assets/plants.glb"></a-asset-item>
@@ -37,24 +38,33 @@
 
             <!-- Insectes -->
             <a-entity>
-                <a-entity gltf-model="#butterfly3" position="42 20 0" rotation="0 100 0" scale="1.5 1.5 1.5" animation-mixer loop="repeat" animation="property: position; to: -43 24 -10; dur: 10000; easing: linear; loop: true"></a-entity>
-                <a-entity gltf-model="#butterfly3" position="36 7 15" rotation="0 10 0" scale="2 2 2" animation-mixer loop="repeat"></a-entity>
-                <a-entity gltf-model="#butterfly3" position="9 11 -6" rotation="0 90 0" scale="1 1 1" animation-mixer loop="repeat" animation="property: position; to: -10 14 -11; dur: 10000; easing: linear; loop: true"></a-entity>
-                <a-entity gltf-model="#butterfly3" position="-0.3 2 -8.4" rotation="0 5 0" scale="1.5 1.5 1.5" animation-mixer="" loop="repeat"></a-entity>
+                <a-entity gltf-model="#butterfly3" position="42 20 0" rotation="0 100 0" scale="1 1 1" animation-mixer loop="repeat" animation="property: position; to: -43 24 -10; dur: 10000; easing: linear; loop: true"></a-entity>
+                <a-entity gltf-model="#butterfly3" position="36 7 15" rotation="0 10 0" scale="1.5 1.5 1.5" animation-mixer loop="repeat"></a-entity>
+                <a-entity gltf-model="#butterfly3" position="9 11 -6" rotation="0 90 0" scale="0.5 0.5 0.5" animation-mixer loop="repeat" animation="property: position; to: -10 14 -11; dur: 10000; easing: linear; loop: true"></a-entity>
+                <a-entity gltf-model="#butterfly3" position="-0.3 2 -8.4" rotation="0 5 0" scale="1 1 1" animation-mixer="" loop="repeat"></a-entity>
 
 
-                <a-entity gltf-model="#dragonfly" position="-21 9 -3" rotation="0 5 0" scale="0.4 0.4 0.4"
+                <a-entity gltf-model="#dragonfly" position="-21 9 -3" rotation="0 5 0" scale="0.3 0.3 0.3"
                     animation="property: position; to: -21 10 -3; dur: 3000; easing: linear; loop: true"></a-entity>
 
-                <a-entity gltf-model="#ant" position="-10.40694 0.8 2.07013" rotation="0 5 0" scale="0.6 0.6 0.6"></a-entity>
-                <a-entity gltf-model="#ant" position="-11.08746 0.8 -0.20734" rotation="0 5 0" scale="0.6 0.6 0.6"></a-entity>
-                <a-entity gltf-model="#ant" position="-8.614 0.8 -0.87249" rotation="0 5 0" scale="0.6 0.6 0.6"></a-entity>
-                <a-entity gltf-model="#ant" position="-5.92331 0.8 0.60923" rotation="0 80 0" scale="0.6 0.6 0.6"></a-entity>
+                <a-entity gltf-model="#ant" position="-10.40694 0.6 2.07013" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
+                <a-entity gltf-model="#ant" position="-11.08746 0.6 -0.20734" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
+                <a-entity gltf-model="#ant" position="-8.614 0.6 -0.87249" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
+                <a-entity gltf-model="#ant" position="-5.92331 0.6 0.60923" rotation="0 80 0" scale="0.4 0.4 0.4"></a-entity>
                 
-                <a-entity gltf-model="#ladybug" position="14 0 9" rotation="0 40 0" scale="1.5 1.5 1.5" animation="property: position; to: 2 0 -16; dur: 10000; easing: linear; loop: true"></a-entity>
-                <a-entity gltf-model="#ladybug" position="24 0 13" rotation="0 40 0" scale="0.5 0.5 0.5" animation="property: position; to: 3 0 -15; dur: 10000; easing: linear; loop: true"></a-entity>
-                <a-entity gltf-model="#ladybug" position="22 0 12" rotation="0 40 0" scale="0.5 0.5 0.5" animation="property: position; to: 1 0 -16; dur: 10000; easing: linear; loop: true"></a-entity>
-                <a-entity gltf-model="#ladybug" position="23 0 12" rotation="0 20 0" scale="0.5 0.5 0.5" animation="property: position; to: 4 0 -14; dur: 10000; easing: linear; loop: true"></a-entity>
+                <a-entity gltf-model="#ladybug" position="14 0 9" rotation="0 40 0" scale="1 1 1" animation="property: position; to: 2 0 -16; dur: 10000; easing: linear; loop: true"></a-entity>
+                <a-entity gltf-model="#ladybug" position="24 0 13" rotation="0 40 0" scale="0.3 0.3 0.3" animation="property: position; to: 3 0 -15; dur: 10000; easing: linear; loop: true"></a-entity>
+                <a-entity gltf-model="#ladybug" position="22 0 12" rotation="0 40 0" scale="0.3 0.3 0.3" animation="property: position; to: 1 0 -16; dur: 10000; easing: linear; loop: true"></a-entity>
+                <a-entity gltf-model="#ladybug" position="23 0 12" rotation="0 20 0" scale="0.3 0.3 0.3" animation="property: position; to: 4 0 -14; dur: 10000; easing: linear; loop: true"></a-entity>
+
+
+
+                <a-entity gltf-model="#butterfly3" position="94.05947 0.97667 -26.12268" rotation="0 80 0" scale="2 2 2" 
+                animation-mixer loop="repeat" animation="dur: 10000; easing: linear; loop: true; property: position; to: -70 40 -26.12268"></a-entity>
+                <a-entity gltf-model="#butterfly3" position="94.05947 0.97667 -31.71299" rotation="0 80 0" scale="2 2 2" animation-mixer loop="repeat" animation="dur: 10000; easing: linear; loop: true; property: position; to: -70 40 -31.71299"></a-entity>
+                <a-entity gltf-model="#butterfly3" position="82.75606 2.178 -21.5423" rotation="0 80 0" scale="2 2 2" animation-mixer loop="repeat" animation="dur: 10000; easing: linear; loop: true; property: position; to: -70 40 -21.5423"></a-entity>
+                <a-entity gltf-model="#butterfly3" position="79.01024 2.178 -29.20607" rotation="0 80 0" scale="2 2 2" animation-mixer loop="repeat" animation="dur: 10000; easing: linear; loop: true; property: position; to: -70 40 -29.20607"></a-entity>
+                <a-entity gltf-model="#butterfly3" position="65.96832 5.159 -32.45459" rotation="0 80 0" scale="2 2 2" animation-mixer loop="repeat" animation="dur: 10000; easing: linear; loop: true; property: position; to: -70 40 -32.45459"></a-entity>
 
             </a-entity>
 
@@ -97,11 +107,10 @@
 
             </a-entity>
 
-            <!-- House -->
+            <!-- House & Telescope -->
             <a-entity>
                 <a-entity gltf-model="#house" position="-2 0 -200" rotation="0 -20 0" scale="80 80 80"></a-entity>
-            </a-entity>
-
+                <a-entity gltf-model="./assets/telescope.glb" position="-0.27672 0 15.22244" rotation="0 -70 0" scale="8 8 8"></a-entity>
             <!-- Flower -->
             <a-entity>
                 <!-- <a-entity gltf-model="#flower-blue" position="-2 0.30 -50" rotation="0 -20 0" scale="5 5 5"></a-entity> -->
@@ -473,7 +482,7 @@
             <!-- Nav mesh. -->
             <a-entity 
                 nav-mesh
-                visible="true"
+                visible="false"
                 position="2 0.2 1.6"
                 gltf-model="#navmesh">
             </a-entity>
