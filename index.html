@@ -3,6 +3,7 @@
         <title>Projet Final</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
         <!-- <script src="./dist/aframe-extras.js"></script> -->
 
@@ -47,15 +48,16 @@
                 <a-entity gltf-model="#dragonfly" position="-21 9 -3" rotation="0 5 0" scale="0.3 0.3 0.3"
                     animation="property: position; to: -21 10 -3; dur: 3000; easing: linear; loop: true"></a-entity>
 
-                <a-entity gltf-model="#ant" position="-10.40694 0.6 2.07013" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
-                <a-entity gltf-model="#ant" position="-11.08746 0.6 -0.20734" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
-                <a-entity gltf-model="#ant" position="-8.614 0.6 -0.87249" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
+
+                <a-entity gltf-model="#ant" position="-10.40694 0.3 2.07013" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
+                <a-entity gltf-model="#ant" position="-11.08746 0.3 -0.20734" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
+                <a-entity gltf-model="#ant" position="-8.614 0.3 -0.87249" rotation="0 5 0" scale="0.4 0.4 0.4"></a-entity>
                 
+
                 <a-entity gltf-model="#ladybug" position="14 0 9" rotation="0 40 0" scale="1 1 1" animation="property: position; to: 2 0 -16; dur: 10000; easing: linear; loop: true"></a-entity>
                 <a-entity gltf-model="#ladybug" position="24 0 13" rotation="0 40 0" scale="0.3 0.3 0.3" animation="property: position; to: 3 0 -15; dur: 10000; easing: linear; loop: true"></a-entity>
                 <a-entity gltf-model="#ladybug" position="22 0 12" rotation="0 40 0" scale="0.3 0.3 0.3" animation="property: position; to: 1 0 -16; dur: 10000; easing: linear; loop: true"></a-entity>
                 <a-entity gltf-model="#ladybug" position="23 0 12" rotation="0 20 0" scale="0.3 0.3 0.3" animation="property: position; to: 4 0 -14; dur: 10000; easing: linear; loop: true"></a-entity>
-
 
 
                 <a-entity gltf-model="#butterfly3" position="94.05947 0.97667 -26.12268" rotation="0 80 0" scale="2 2 2" 
@@ -108,8 +110,35 @@
 
             <!-- House & Telescope -->
             <a-entity>
-                <a-entity gltf-model="#house" position="-2 0 -200" rotation="0 -20 0" scale="80 80 80"></a-entity>
-                <a-entity gltf-model="./assets/telescope.glb" position="-0.27672 0 15.22244" rotation="0 -70 0" scale="8 8 8"></a-entity>
+                <a-entity gltf-model="#house" position="-2 0 -200" rotation="0 -20 0" scale="80 80 80" event-set__enter="_event: mouseenter; _target: #maisonText; visible: true" event-set__leave="_event: mouseleave; _target: #maisonText; visible: false" material="side: double">
+                    <a-text
+                        id="maisonText"
+                        value="Regarde, \n c’est pas juste une maison… \n c’est une forteresse imprenable !"
+                        align="center"
+                        color="#FFF"
+                        visible="false"
+                        position="0.42 0.4 1.42"
+                        rotate="0 40 0"
+                        scale="0.2 0.2 0.2"
+                        geometry="primitive: plane; width: 4"
+                        material="color: #2f8f3d"
+                    ></a-text>
+                </a-entity>
+
+                <a-entity gltf-model="#telescope" position="-0.27672 0 15.22244" rotation="0 170 0" scale="8 8 8" event-set__enter="_event: mouseenter; _target: #telescopeText; visible: true" event-set__leave="_event: mouseleave; _target: #telescopeText; visible: false" material="side: double">
+                    <a-text
+                        id="telescopeText"
+                        value="J'ai l'ennemi en visuel... \n Il est GRAND, tres GRAND... \n Oh non, c'est juste un brin \n d'herbe trop pres !"
+                        align="center"
+                        color="#FFF"
+                        visible="false"
+                        position="0 2 0"
+                        scale="0.5 0.5 0.5"
+                        geometry="primitive: plane; width: 3"
+                        material="color: #2f8f3d"
+                    ></a-text>
+                </a-entity>
+
             </a-entity>
 
             <!-- Flower -->
@@ -490,18 +519,19 @@
             </a-entity>
 
 
-
-            <a-entity id="interactive-sphere"  gltf-model="#ant" position="-4 0.20 2" rotation="0 20 0" scale="0.4 0.4 0.4" class="clickable" hoverable></a-entity>
-
-
             <!-- Player. -->
-            <a-entity id="rig" movement-controls="constrainToNavMesh: true" position="0 0 0">
-                <a-camera id="camera" fov="80" position="0 1.6 0" look-controls="pointerLockEnabled: true">
+            <a-entity id="rig"
+                    movement-controls="constrainToNavMesh: true"
+                    position="0 0 0">
+                <a-entity camera
+                        position="0 1 0"
+                        look-controls="pointerLockEnabled: true">
                     <a-cursor></a-cursor>
-                </a-camera>
+                    <a-entity gltf-model="#ant" position="0 -.6 -1" rotation="0 180 0" scale="0.4 0.4 0.4" class="clickable" hoverable></a-entity>
+                </a-entity>
             </a-entity>
             
-            <a-plane src="#sol" position="0 0 0" rotation="-90 0 0" width="800" height="800"></a-plane>
+            <a-plane src="#sol" position="0 0 0" rotation="-90 0 0" width="800" height="800" event-set__down="_event: mousedown; material.wireframe: true" event-set__up="_event: mouseup; material.wireframe: false" event-set__leave="_event: moulseleave; material.wireframe: false"></a-plane>
             <a-sky src="#sky"></a-sky>
             <a-sound src="./assets/son-foret.wav" autoplay="true" loop="true"></a-entity>
             <!-- <a-sound src="./assets/son-ruisseau.wav" autoplay="true" loop="true"></a-entity> -->
@@ -509,47 +539,10 @@
         </a-scene>
 
         <script>
-            AFRAME.registerComponent("attach-to-camera", {
-                schema: {
-                    attached: { type: "boolean", default: false },
-                },
-                init: function () {
-                    const el = this.el; // L'objet interactif
-                    const camera = document.querySelector("#rig"); // Caméra
-
-                    // Gestion du clic
-                    el.addEventListener("click", () => {
-                        if (!this.data.attached) {
-                            // Attache l'objet à la caméra pour qu'il bouge avec elle
-                            camera.appendChild(el);
-
-                            // Place l'objet légèrement derrière et en dessous de la caméra
-                            el.setAttribute("position", "0 0 0");
-                            el.setAttribute("scale", "1 1 1");
-                            el.setAttribute("rotation", "0 0 0");
-
-                            // Marque l'objet comme attaché
-                            this.data.attached = true;
-                        } else {
-                            // Détache l'objet et le remet à sa position initiale
-                            el.setAttribute("position", "0 1 -3");
-                            el.setAttribute("scale", "1 1 1");
-                            el.setAttribute("rotation", "0 0 0");
-                            document.querySelector("a-scene").appendChild(el);
-
-                            // Marque l'objet comme détaché
-                            this.data.attached = false;
-                        }
-                    });
-                },
-            });
-
-            document.querySelector("#interactive-sphere").setAttribute("attach-to-camera", "");
-        
             // Component to generate luminous spheres
             AFRAME.registerComponent("generate-spheres", {
                 init: function () {
-                    for (let i = 0; i < 20; i++) {
+                    for (let i = 0; i < 10; i++) {
                         const sphere = document.createElement("a-sphere");
         
                         // Position aléatoire dans l'espace
@@ -575,8 +568,5 @@
                 },
             });
         </script>
-        
-
-        <!-- <a-entity geometry="primitive:sphere; radius:1" position="0 3 6" scale="0.4 0.4 0.4" material="color:#fff; emissive:#01FFCB; emissiveIntensity:100;" light="color:#01FFCB; type:point; intensity:2; distance:8"></a-entity> -->
     </body>
 </html>
