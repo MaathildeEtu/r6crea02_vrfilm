@@ -528,7 +528,15 @@
                         look-controls="pointerLockEnabled: true">
                     <a-cursor></a-cursor>
                     <a-entity gltf-model="#ant" position="0 -.6 -.5" rotation="0 180 0" scale="0.4 0.4 0.4" class="clickable" hoverable></a-entity>
-                </a-entity>
+
+                    <a-entity>
+                        <a-text id="gambas" value="Trouve la clés de la grande porte : 0/1" align="center" position="-0. -0.7 -2.2" color="#FFF" scale=".4 .4 .4" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
+                        <a-text id="sword" value="Trouve le grimoire d’Archibald  : 0/1" position="-0. -0.6 -2.2" color="#FFF" scale=".4 .4 .4" align="center" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
+                        <a-text id="masque" value="Trouve l’épée d’Arthur : 0/1" position="-0. -0.5 -2.2" color="#FFF" scale=".4 .4 .4"  align="center" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
+                    </a-entity>
+
+                    <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 20; showLine: true; raycaster: red;" position="-0.5 1.5 -0.5"></a-entity>
+                    <a-entity laser-controls="hand: right" raycaster="objects: .clickable; far: 20; showLine: true; raycaster: red;" position="0.5 1.5 -0.5"></a-entity>
             </a-entity>
             
             <a-plane src="#sol" position="0 0 0" rotation="-90 0 0" width="800" height="800" event-set__down="_event: mousedown; material.wireframe: true" event-set__up="_event: mouseup; material.wireframe: false" event-set__leave="_event: moulseleave; material.wireframe: false"></a-plane>
@@ -539,6 +547,55 @@
         </a-scene>
 
         <script>
+             // Initialisation du compteur
+            let gambas = 0;
+            let sword = 0;
+            let mask = 0;
+        
+
+            // Fonction pour mettre à jour le texte du score
+            function updateScore() {
+                const scoreText = document.querySelector("#gambas");
+                const scoreSword = document.querySelector("#sword");
+                const scoreMask = document.querySelector("#masque");
+                if (scoreText) {
+                    scoreText.setAttribute("value", "Trouve les Kodamas : " + gambas +"/5");
+                    console.log("Score mis à jour : " + gambas); // Affiche le score dans la console
+                }
+                if (scoreSword) {
+                    scoreSword.setAttribute("value", "Trouve l'epee de la princesse : " + sword +"/1");
+                    console.log("Score mis à jour : " + sword); // Affiche le score dans la console
+                }
+                if (scoreMask) {
+                    scoreMask.setAttribute("value", "Trouve le masque de la princesse : " + mask +"/1");
+                    console.log("Score mis à jour : " + mask); // Affiche le score dans la console
+                }
+            }
+
+
+            // Component to enable rotation on interaction
+            AFRAME.registerComponent("interactable", {
+                init: function () {
+                    this.el.addEventListener("click", () => {
+                        // Vérifiez si l'objet est déjà invisible (cliqué précédemment)
+                        if (this.el.getAttribute("visible") === true) {
+                            // Incrémenter le score si l'objet est encore visible
+                            gambas += 1;
+                            // Mettre à jour l'affichage du score
+                            updateScore();
+                            // Faire disparaître l'objet après le clic
+                            this.el.setAttribute("visible", "false");
+                        }
+                        });
+                
+                },
+            
+            });
+
+
+
+
+
             // Component to generate luminous spheres
             AFRAME.registerComponent("generate-spheres", {
                 init: function () {
