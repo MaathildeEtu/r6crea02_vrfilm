@@ -34,6 +34,11 @@
                 <a-asset-item id="ant" src="./assets/ant.glb"></a-asset-item>
                 <a-asset-item id="ladybug" src="./assets/ladybug.glb"></a-asset-item>
 
+                <!-- Objet -->
+                <a-asset-item id="clee" src="./assets/objet-cle.glb"></a-asset-item>
+                <a-asset-item id="epee" src="./assets/objet-epee.glb"></a-asset-item>
+                <a-asset-item id="grimoire" src="./assets/objet-grimoire.glb"></a-asset-item>
+
                 <a-asset-item id="navmesh" src="./assets/trace-navmesh6.glb"></a-asset-item>
             </a-asset>
 
@@ -507,6 +512,11 @@
                 <a-entity gltf-model="#herbs" position="82 2.5 -40" rotation="0 225 0" scale="10 10 10"></a-entity>
             </a-entity>
 
+            <!-- Objet -->
+            <a-entity interactionclee gltf-model="#clee" position="2 1 0" scale="1 1 1" rotate="0 0 0"></a-entity>
+            <a-entity interactionepee gltf-model="#epee" position="-2 1 0" scale="1 1 1" rotate="0 0 0"></a-entity>
+            <a-entity interactiongrimoire gltf-model="#grimoire" position="0 1 1" scale="1 1 1" rotate="0 0 0"></a-entity>
+
             <a-entity generate-spheres position="0 6 0"></a-entity>
 
             <!-- Nav mesh. -->
@@ -524,19 +534,22 @@
                     movement-controls="constrainToNavMesh: true"
                     position="0 0 0">
                 <a-entity camera
-                        position="0 .5 0"
+                        position="0 1 0"
                         look-controls="pointerLockEnabled: true">
                     <a-cursor></a-cursor>
                     <a-entity gltf-model="#ant" position="0 -.6 -.5" rotation="0 180 0" scale="0.4 0.4 0.4" class="clickable" hoverable></a-entity>
 
-                    <a-entity>
-                        <a-text id="gambas" value="Trouve la clés de la grande porte : 0/1" align="center" position="-0. -0.7 -2.2" color="#FFF" scale=".4 .4 .4" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
-                        <a-text id="sword" value="Trouve le grimoire d’Archibald  : 0/1" position="-0. -0.6 -2.2" color="#FFF" scale=".4 .4 .4" align="center" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
-                        <a-text id="masque" value="Trouve l’épée d’Arthur : 0/1" position="-0. -0.5 -2.2" color="#FFF" scale=".4 .4 .4"  align="center" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
-                    </a-entity>
+                    <a-text id="cleeText" value="Trouve la clee : 0/1" align="center" position="-0. -0.7 -2.2" color="#FFF" scale=".4 .4 .4" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
+                    <a-text id="epeeText" value="Trouve l'epee d'Arthur : 0/1" position="-0. -0.6 -2.2" color="#FFF" scale=".4 .4 .4" align="center" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
+                    <a-text id="grimoireText" value="Trouve le grimoire : 0/1" position="-0. -0.5 -2.2" color="#FFF" scale=".4 .4 .4"  align="center" geometry="primitive:plane; width:4; height:.1" material="color:#000"></a-text>
+                </a-entity>
 
-                    <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 20; showLine: true; raycaster: red;" position="-0.5 1.5 -0.5"></a-entity>
-                    <a-entity laser-controls="hand: right" raycaster="objects: .clickable; far: 20; showLine: true; raycaster: red;" position="0.5 1.5 -0.5"></a-entity>
+                <a-entity laser-controls="hand: left"
+                raycaster="objects: .clickable; far: 20; showLine: true; raycaster: red;"
+                position="-0.5 1.5 -0.5"></a-entity>
+            <a-entity laser-controls="hand: right"
+                raycaster="objects: .clickable; far: 20; showLine: true; raycaster: red;"
+                position="0.5 1.5 -0.5"></a-entity>
             </a-entity>
             
             <a-plane src="#sol" position="0 0 0" rotation="-90 0 0" width="800" height="800" event-set__down="_event: mousedown; material.wireframe: true" event-set__up="_event: mouseup; material.wireframe: false" event-set__leave="_event: moulseleave; material.wireframe: false"></a-plane>
@@ -547,40 +560,76 @@
         </a-scene>
 
         <script>
-             // Initialisation du compteur
-            let gambas = 0;
-            let sword = 0;
-            let mask = 0;
+            // Initialisation du compteur
+            let clee = 0;
+            let epee = 0;
+            let grimoire = 0;
         
 
             // Fonction pour mettre à jour le texte du score
             function updateScore() {
-                const scoreText = document.querySelector("#gambas");
-                const scoreSword = document.querySelector("#sword");
-                const scoreMask = document.querySelector("#masque");
-                if (scoreText) {
-                    scoreText.setAttribute("value", "Trouve les Kodamas : " + gambas +"/5");
-                    console.log("Score mis à jour : " + gambas); // Affiche le score dans la console
+                const scoreClee = document.querySelector("#cleeText");
+                const scoreEpee = document.querySelector("#epeeText");
+                const scoreGrimoire = document.querySelector("#grimoireText");
+                if (scoreClee) {
+                    scoreClee.setAttribute("value", "Trouve la clee : " + clee +"/5");
+                    console.log("Score mis à jour : " + clee); // Affiche le score dans la console
                 }
-                if (scoreSword) {
-                    scoreSword.setAttribute("value", "Trouve l'epee de la princesse : " + sword +"/1");
-                    console.log("Score mis à jour : " + sword); // Affiche le score dans la console
+                if (scoreEpee) {
+                    scoreEpee.setAttribute("value", "Trouve l'epee d'Arthur : " + epee +"/1");
+                    console.log("Score mis à jour : " + epee); // Affiche le score dans la console
                 }
-                if (scoreMask) {
-                    scoreMask.setAttribute("value", "Trouve le masque de la princesse : " + mask +"/1");
-                    console.log("Score mis à jour : " + mask); // Affiche le score dans la console
+                if (scoreGrimoire) {
+                    scoreGrimoire.setAttribute("value", "Trouve le grimoire : " + grimoire +"/1");
+                    console.log("Score mis à jour : " + grimoire); // Affiche le score dans la console
                 }
             }
 
 
             // Component to enable rotation on interaction
-            AFRAME.registerComponent("interactable", {
+            AFRAME.registerComponent("interactionclee", {
                 init: function () {
                     this.el.addEventListener("click", () => {
                         // Vérifiez si l'objet est déjà invisible (cliqué précédemment)
                         if (this.el.getAttribute("visible") === true) {
                             // Incrémenter le score si l'objet est encore visible
-                            gambas += 1;
+                            clee += 1;
+                            // Mettre à jour l'affichage du score
+                            updateScore();
+                            // Faire disparaître l'objet après le clic
+                            this.el.setAttribute("visible", "false");
+                        }
+                        });
+                
+                },
+            
+            });
+
+            AFRAME.registerComponent("interactionepee", {
+                init: function () {
+                    this.el.addEventListener("click", () => {
+                        // Vérifiez si l'objet est déjà invisible (cliqué précédemment)
+                        if (this.el.getAttribute("visible") === true) {
+                            // Incrémenter le score si l'objet est encore visible
+                            epee += 1;
+                            // Mettre à jour l'affichage du score
+                            updateScore();
+                            // Faire disparaître l'objet après le clic
+                            this.el.setAttribute("visible", "false");
+                        }
+                        });
+                
+                },
+            
+            });
+
+            AFRAME.registerComponent("interactiongrimoire", {
+                init: function () {
+                    this.el.addEventListener("click", () => {
+                        // Vérifiez si l'objet est déjà invisible (cliqué précédemment)
+                        if (this.el.getAttribute("visible") === true) {
+                            // Incrémenter le score si l'objet est encore visible
+                            grimoire += 1;
                             // Mettre à jour l'affichage du score
                             updateScore();
                             // Faire disparaître l'objet après le clic
@@ -596,28 +645,31 @@
 
 
 
+            
+
+
             // Component to generate luminous spheres
             AFRAME.registerComponent("generate-spheres", {
                 init: function () {
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < 1000; i++) {
                         const sphere = document.createElement("a-sphere");
         
                         // Position aléatoire dans l'espace
                         sphere.setAttribute("position", {
-                            x: Math.random() * 20 - 10,
-                            y: Math.random() * 20,
-                            z: Math.random() * 20 - 10,
+                            x: Math.random() * 40 - 10,
+                            y: Math.random() * 40,
+                            z: Math.random() * 40 - 10,
                         });
         
                         // Matériau lumineux (sans influencer l'environnement)
                         sphere.setAttribute("material", {
-                            color: "#ded4a6", // Couleur de base
-                            emissive: "#ded4a6", // Lumière émise par la sphère
+                            color: "#fff2b5", // Couleur de base
+                            emissive: "#fff2b5", // Lumière émise par la sphère
                             emissiveIntensity: 1, // Intensité de l'émission
                         });
         
                         // Taille de la sphère
-                        sphere.setAttribute("radius", 0.4);
+                        sphere.setAttribute("radius", 0.08);
         
                         // Ajout de la sphère à la scène
                         this.el.appendChild(sphere);
